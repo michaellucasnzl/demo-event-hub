@@ -8,6 +8,8 @@ using Microsoft.Azure.Data.SchemaRegistry.ApacheAvro;
 using Microsoft.Extensions.Configuration;
 using models;
 
+Console.WriteLine("Consumer started.");
+
 var builder = new ConfigurationBuilder()
     .AddUserSecrets<Program>();
 

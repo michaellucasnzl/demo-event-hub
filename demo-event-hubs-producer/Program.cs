@@ -1,10 +1,13 @@
-﻿using Azure.Messaging.EventHubs;
+﻿using System.Linq.Expressions;
+using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
 using Azure.Data.SchemaRegistry;
 using Azure.Identity;
 using Microsoft.Azure.Data.SchemaRegistry.ApacheAvro;
 using Microsoft.Extensions.Configuration;
 using models;
+
+Console.WriteLine("Producer started.");
 
 var builder = new ConfigurationBuilder()
     .AddUserSecrets<Program>();
@@ -29,18 +32,29 @@ var serializer = new SchemaRegistryAvroSerializer(schemaRegistryClient, configur
 var vehicle = new Vehicle()
 {
     Id = 1,
-    Name = "Best Car",
-    Description = "Best car in the world",
-    Colour = "Gold"
+    Name = "Highlander",
+    Description = "7-seater SUV with V6 3.5L petrol engine",
+    Colour = "White pearl",
+    Make = "Toyota"
 };
-var eventData = (EventData)await serializer.SerializeAsync(vehicle, messageType: typeof(EventData));
 
-// Create a batch of events 
-using EventDataBatch eventBatch = await producerClient.CreateBatchAsync();
+try
+{
+    var eventData = (EventData)await serializer.SerializeAsync(vehicle, messageType: typeof(EventData));
 
-// Add the event data to the event batch. 
-eventBatch.TryAdd(eventData);
+    // Create a batch of events 
+    using EventDataBatch eventBatch = await producerClient.CreateBatchAsync();
 
-// Send the batch of events to the event hub. 
-await producerClient.SendAsync(eventBatch);
-Console.WriteLine("A batch of 1 order has been published.");
+    // Add the event data to the event batch. 
+    eventBatch.TryAdd(eventData);
+
+    // Send the batch of events to the event hub. 
+    await producerClient.SendAsync(eventBatch);
+}
+catch (Exception e)
+{
+    Console.WriteLine($"There was an exception when producing the message: {e.Message}");
+    return;
+}
+
+Console.WriteLine("A batch of 1 vehicle has been published.");

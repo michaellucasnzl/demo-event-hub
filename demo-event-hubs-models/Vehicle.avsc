@@ -26,6 +26,10 @@
                 "string"
             ],
             "default": null
+        },
+        {
+            "name": "Make",
+            "type": "string"
         }
     ]
 }

@@ -9,6 +9,7 @@ namespace models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Colour { get; set; }
+        public string Make { get; set; }
 
         public virtual object Get(int fieldPos)
         {
@@ -18,6 +19,7 @@ namespace models
                 1 => Name,
                 2 => Description,
                 3 => Colour,
+                4 => Make,
                 _ => throw new AvroRuntimeException("Bad index " + fieldPos + " in Get()"),
             };
         }
@@ -38,21 +40,26 @@ namespace models
                 case 3:
                     Colour = (string)fieldValue;
                     break;
+                case 4:
+                    Make = (string)fieldValue;
+                    break;
                 default: throw new AvroRuntimeException("Bad index " + fieldPos + " in Put()");
             }
         }
 
         public virtual Schema Schema => Schema.Parse(SchemaDefinition);
 
-        public static string SchemaDefinition = @"{
-            ""type"":""record"",
-            ""name"":""Vehicle"",
-            ""fields"":[
-                {""name"":""Id"",""type"":""int""},
-                {""name"":""Name"",""type"":""string""},
-                {""name"":""Description"",""type"":[""null"",""string""],""default"":null},
-                {""name"":""Colour"",""type"":[""null"",""string""],""default"":null}
-            ]
-        }";
+        private const string SchemaDefinition = """
+                                                {
+                                                            "type":"record",
+                                                            "name":"Vehicle",
+                                                            "fields":[
+                                                                {"name":"Id","type":"int"},
+                                                                {"name":"Name","type":"string"},
+                                                                {"name":"Description","type":["null","string"],"default":null},
+                                                                {"name":"Colour","type":["null","string"],"default":null}
+                                                            ]
+                                                        }
+                                                """;
     }
 }
