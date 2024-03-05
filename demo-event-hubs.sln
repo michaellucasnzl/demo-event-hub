@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-event-hubs-producer", "demo-event-hubs-producer\demo-event-hubs-producer.csproj", "{2BBC1CBB-7F49-4F53-AF28-FE3E7807E022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-event-hubs-consumer", "demo-event-hubs-consumer\demo-event-hubs-consumer.csproj", "{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BBC1CBB-7F49-4F53-AF28-FE3E7807E022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BBC1CBB-7F49-4F53-AF28-FE3E7807E022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BBC1CBB-7F49-4F53-AF28-FE3E7807E022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BBC1CBB-7F49-4F53-AF28-FE3E7807E022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
