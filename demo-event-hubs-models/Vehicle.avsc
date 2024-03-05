@@ -1,0 +1,31 @@
+{
+    "type": "record",
+    "name": "Vehicle",
+    "namespace": "models",
+    "fields": [
+        {
+            "name": "Id",
+            "type": "int"
+        },
+        {
+            "name": "Name",
+            "type": "string"
+        },
+        {
+            "name": "Description",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "Colour",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        }
+    ]
+}

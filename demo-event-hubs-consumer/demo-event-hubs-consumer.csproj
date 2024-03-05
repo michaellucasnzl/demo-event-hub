@@ -15,4 +15,8 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\demo-event-hubs-models\demo-event-hubs-models.csproj" />
+    </ItemGroup>
+
 </Project>

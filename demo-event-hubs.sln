@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-event-hubs-producer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-event-hubs-consumer", "demo-event-hubs-consumer\demo-event-hubs-consumer.csproj", "{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo-event-hubs-models", "demo-event-hubs-models\demo-event-hubs-models.csproj", "{8C034528-8EE3-4921-A5DF-91D237E3BF66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BFA2292-1DC1-4352-BD8B-44EE2F0566B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C034528-8EE3-4921-A5DF-91D237E3BF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C034528-8EE3-4921-A5DF-91D237E3BF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C034528-8EE3-4921-A5DF-91D237E3BF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C034528-8EE3-4921-A5DF-91D237E3BF66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
